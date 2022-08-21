@@ -6,6 +6,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsDetailComponent } from './pages/news-detail/news-detail.component';
+import { SharedModule } from '../shared/shared.module';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { NewsDetailComponent } from './pages/news-detail/news-detail.component';
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    SharedModule,
+    QuicklinkModule
   ]
 })
 export class WebsiteModule { }

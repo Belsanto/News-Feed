@@ -1,1 +1,10 @@
-<p>news works!</p>
+<a (click)="onShowDetail()">
+  <app-img
+    [img]="article.media">
+  </app-img>
+</a>
+<h2 class="title">{{ article.title }}</h2>
+<p >{{ article.published_date | timeAgo }}</p>
+<p >{{ article.authors }}</p>
+<h3 class="title">{{ article.index }}</h3>
+<p class="category">{{ article.topic }}</p>

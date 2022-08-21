@@ -1,1 +1,6 @@
-<p>NEWS HOME</p>
+<app-news-feed *ngIf="newsList!==null"
+[newsFeed]="newsList"
+[page]="page"
+(loadNext)="onLoadNext()"
+(loadPrevious)="onLoadPrevious()">
+</app-news-feed>
