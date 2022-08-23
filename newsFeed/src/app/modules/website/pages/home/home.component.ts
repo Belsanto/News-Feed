@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
       for (let i = 0; i < this.newsList.articles.length; i++) {
         this.newsList.articles[i].index=i;
       }
+      this.newsService.setNewsFeed(this.newsList);
     });
 
 
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;
         }
+        this.newsService.setNewsFeed(this.newsList);
       });
 
     }
@@ -53,6 +55,7 @@ export class HomeComponent implements OnInit {
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;
         }
+        this.newsService.setNewsFeed(this.newsList);
       });
 
     }

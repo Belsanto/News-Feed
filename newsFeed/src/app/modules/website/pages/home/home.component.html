@@ -1,4 +1,4 @@
-<app-news-feed *ngIf="newsList!==null"
+<app-news-feed class="container" *ngIf="newsList!==null"
 [newsFeed]="newsList"
 [page]="page"
 (loadNext)="onLoadNext()"

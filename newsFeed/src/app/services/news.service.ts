@@ -16,15 +16,21 @@ export class NewsService {
     'x-rapidapi-key': 'c7c1a90de9mshb9f00b2eb252e9ap11edfcjsnfd404a197528'
   });
 
+  private newsFeed: NewsFeed | null=null;
+
   constructor(
     private  http: HttpClient
     ) { }
 
-    getAll(q:string, lang:string, page:number){
+    getAll(q:string, lang:string, page:number|string){
 
       return this.http
       .get<NewsFeed>(`${this.APIURL}/search?q=${q}&lang=${lang}&page=${page}&page_size=10`, {
         headers: this.HEADERS
       });
+    }
+
+    setNewsFeed(newsFeed: NewsFeed){
+      this.newsFeed = newsFeed;
     }
 }

@@ -6,6 +6,7 @@ import { NewsComponent } from './components/news/news.component';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { RouterModule } from '@angular/router';
 import { SwiperModule } from 'swiper/angular';
+import { ShortDescriptionPipe } from './pipes/short-description.pipe';
 
 
 
@@ -14,7 +15,8 @@ import { SwiperModule } from 'swiper/angular';
     ImgComponent,
     NewsComponent,
     NewsFeedComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    ShortDescriptionPipe
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { SwiperModule } from 'swiper/angular';
     ImgComponent,
     NewsComponent,
     NewsFeedComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    ShortDescriptionPipe
   ]
 })
 export class SharedModule { }
