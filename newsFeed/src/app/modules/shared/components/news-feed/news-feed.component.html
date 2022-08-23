@@ -1,13 +1,21 @@
 
 <div class="news-detail" *ngIf="articleChosen">
 
-  <div class="news-content" >
+  <div *ngIf="newsFeed" class="news-content" >
     <h1>{{ articleChosen.title }}</h1>
+    <h1>{{ articleChosen.summary | shortDescription}}</h1>
     <p>{{ articleChosen.published_date | date }}</p>
+    <a routerLink="/news" [queryParams]="{
+      q: newsFeed.user_input.q,
+      lang: newsFeed.user_input.lang,
+      page: newsFeed.page,
+      i: articleChosen.index}">Ver detalle</a>
   </div>
+  <svg class="polygon">
+  </svg>
   <div class="news-picture">
-    <app-img [img]="articleChosen.media">
-    </app-img>
+    <figure class="img"><app-img [img]="articleChosen.media">
+    </app-img></figure>
   </div>
 </div>
 
@@ -15,6 +23,7 @@
   <app-news [article]="article"
   *ngFor="let article of newsFeed.articles"
   (showArticle)="onShowDetail($event)"></app-news>
+
  <button  *ngIf="page!==1" (click)="onLoadPrevious()">Load Less</button>
  <button *ngIf="newsFeed.total_pages!==page" (click)="onLoadNext()">Load More</button>
 </div>

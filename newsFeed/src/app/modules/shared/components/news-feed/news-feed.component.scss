@@ -6,13 +6,50 @@
 
 .news-detail {
   top: 0;
-  background: #afcc48ab;
+  background-color: whitesmoke;
   display: flex;
   transition: all ease-out .5s;
   box-shadow: 0px 0px 5px rgba(black,.5);
 	padding: 1em 2em;
-
   margin-bottom: 5%;
+  width: 1000px;
+  height: 500px;
+  align-items:center;
+  justify-content: center;
+  .polygon{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    vertical-align: middle;
+
+    background-color: whitesmoke;
+  -webkit-clip-path: polygon(50% 0%,
+  100% 0%,
+  50% 100%,
+   0% 100%);
+   clip-path: polygon(50% 0%,
+                   100% 0%,
+                   50% 100%,
+                    0% 100%);
+
+  }
+  .news-content{
+
+    width: 700px;
+    height: 400px;
+    margin-right: 100px;
+    background-color: whitesmoke;
+
+
+  }
+  .news-picture{
+    width: 50%;
+    .img{
+      width: 700px;
+      height: 400px;
+    }
+
+  }
 }
 
 // tablets
