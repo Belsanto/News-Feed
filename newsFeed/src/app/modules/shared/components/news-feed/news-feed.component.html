@@ -1,7 +1,7 @@
 
 <div class="news-detail" *ngIf="articleChosen">
 
-  <div *ngIf="newsFeed" class="news-content" >
+  <section *ngIf="newsFeed" class="news-content" >
     <h1>{{ articleChosen.title }}</h1>
     <h1>{{ articleChosen.summary | shortDescription}}</h1>
     <p>{{ articleChosen.published_date | date }}</p>
@@ -10,13 +10,14 @@
       lang: newsFeed.user_input.lang,
       page: newsFeed.page,
       i: articleChosen.index}">Ver detalle</a>
-  </div>
+  </section>
+  <section class="content-aux"></section>
   <svg class="polygon">
   </svg>
-  <div class="news-picture">
+  <section class="news-picture">
     <figure class="img"><app-img [img]="articleChosen.media">
     </app-img></figure>
-  </div>
+  </section>
 </div>
 
 <div *ngIf="newsFeed!==null" class="news--grid">

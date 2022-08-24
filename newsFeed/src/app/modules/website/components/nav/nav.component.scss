@@ -20,6 +20,7 @@
 }
 .show-mobile {
   display: block;
+  background-color: white;
   box-shadow: 0px 2px 5px rgb(black, .2);
   > div {
     padding: 1em;
@@ -49,6 +50,8 @@
   }
 }
 .hide-mobile {
+
+  background-color: white;
   display: none;
   box-shadow: 0px 2px 5px rgb(black, .2);
   > div {
