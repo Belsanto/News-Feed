@@ -90,9 +90,11 @@
     -webkit-backdrop-filter: blur(10px);
 
     .box{
-      .exit-icon{
-        opacity: 1;
-        position: absolute;
+      .exit-btn{
+        .exit-icon{
+          opacity: 1;
+          position: absolute;
+        }
       }
       min-width: 380px;
       .polygon{
