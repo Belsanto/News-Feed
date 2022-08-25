@@ -24,9 +24,14 @@ export class NewsFeedComponent implements OnInit {
 
   articleChosen: Article | null = null;
 
+  openDeatilNews:boolean=false;
+
   constructor(
   ) { }
 
+  toggleNewsDetail() {
+    this.openDeatilNews = !this.openDeatilNews;
+  }
 
   ngOnInit(): void {
     if(this.newsFeed)

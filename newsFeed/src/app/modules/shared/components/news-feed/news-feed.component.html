@@ -1,6 +1,12 @@
 
-<div class="news-detail" *ngIf="articleChosen">
 
+<div class="news-detail" [class.active]="openDeatilNews" *ngIf="articleChosen">
+<div class="box">
+  <section class="exit-btn">
+  <a class="exit-icon" (click)="toggleNewsDetail()">
+    <img src="../../../../../assets/svg/icon_exit_X.svg" alt="exit button">
+  </a>
+</section>
   <section *ngIf="newsFeed" class="news-content" >
     <h1>{{ articleChosen.title }}</h1>
     <h1>{{ articleChosen.summary | shortDescription}}</h1>
@@ -11,7 +17,6 @@
       page: newsFeed.page,
       i: articleChosen.index}">Ver detalle</a>
   </section>
-  <section class="content-aux"></section>
   <svg class="polygon">
   </svg>
   <section class="news-picture">
@@ -19,9 +24,10 @@
     </app-img></figure>
   </section>
 </div>
+</div>
 
 <div *ngIf="newsFeed!==null" class="news--grid">
-  <app-news [article]="article"
+  <app-news (click)="toggleNewsDetail()" [article]="article"
   *ngFor="let article of newsFeed.articles"
   (showArticle)="onShowDetail($event)"></app-news>
 
