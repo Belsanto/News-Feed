@@ -64,7 +64,7 @@
 }
 
 //mobile
-@media screen and (max-width: 40em){
+@media screen and (max-width: 26em){
   .news--grid {
     display: flex;
     flex-direction: column;
@@ -90,13 +90,77 @@
     -webkit-backdrop-filter: blur(10px);
 
     .box{
+      min-width: 19em;
+      height: 30em;
       .exit-btn{
         .exit-icon{
           opacity: 1;
           position: absolute;
         }
       }
+      .polygon{
+        max-width: 21.25em;
+        min-width: 11.25em;
+        height: 20.2em;
+        left: 3%;
+        vertical-align: middle;
+        background-color: whitesmoke;
+      -webkit-clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
+      clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
+      }
+      .news-content{
+        width: 55%;
+        top: 25%;
+      }
+      .news-picture{
+        top: 10%;
+        left: 5%;
+        .img{
+          width: 25.75em;
+        }
+      }
+    }
+    &.active{
+      transform: translateX(0);
+    }
+  }
+}
+
+//sm
+@media screen and (min-width: 26.1em)  and (max-width: 40em){
+  .news--grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+
+  .news-detail {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-120%);
+    transition: all ease-out .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    .box{
+
       min-width: 380px;
+      .exit-btn{
+        .exit-icon{
+          opacity: 1;
+          position: absolute;
+        }
+      }
       .polygon{
         max-width: 21.25em;
         min-width: 11.25em;
