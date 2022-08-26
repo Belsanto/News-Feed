@@ -11,7 +11,6 @@ import { NewsService } from 'src/app/services/news.service';
 export class HomeComponent implements OnInit {
 
   newsList: NewsFeed | null = null;
-
   page: number = 1;
 
   constructor(
@@ -20,12 +19,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.newsList = null;
     this.newsService.getAll('colombia','es',this.page).subscribe(data=>{
       this.newsList = data;
       for (let i = 0; i < this.newsList.articles.length; i++) {
         this.newsList.articles[i].index=i;
       }
       this.newsService.setNewsFeed(this.newsList);
+    },
+    (errorMsg) => {
+      window.alert(errorMsg);
     });
 
 
@@ -34,13 +37,14 @@ export class HomeComponent implements OnInit {
   onLoadNext() {
     if(this.newsList!=null){
 
-      this.page= this.page+1;
+      this.newsList = null;
       this.newsService.getAll('colombia','es',this.page).subscribe(data=>{
         this.newsList = data;
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;
         }
         this.newsService.setNewsFeed(this.newsList);
+        this.page= this.page+1;
       });
 
     }
@@ -49,13 +53,14 @@ export class HomeComponent implements OnInit {
   onLoadPrevious() {
     if(this.newsList!=null){
 
-      this.page= this.page-1;
+      this.newsList = null;
       this.newsService.getAll('colombia','es',this.page).subscribe(data=>{
         this.newsList = data;
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;
         }
         this.newsService.setNewsFeed(this.newsList);
+        this.page= this.page-1;
       });
 
     }

@@ -1,8 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpStatusCode } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, retry, map } from 'rxjs';
-import { Article } from '../models/article.models';
-import { NewsFeed, User_input } from '../models/newsFeed.models';
+import { retry,  catchError, throwError } from 'rxjs';
+import { NewsFeed } from '../models/newsFeed.models';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +24,24 @@ export class NewsService {
     getAll(q:string, lang:string, page:number|string){
 
       return this.http
-      .get<NewsFeed>(`${this.APIURL}/search?q=${q}&lang=${lang}&page=${page}&page_size=10`, {
-        headers: this.HEADERS
-      });
+      .get<NewsFeed>(
+        `${this.APIURL}/search?q=${q}&lang=${lang}&page=${page}&page_size=10`,
+        {headers: this.HEADERS}
+        ).pipe(
+          retry(2),
+          catchError((error: HttpErrorResponse) => {
+            if (error.status === HttpStatusCode.Conflict) {
+              return throwError('Something is wrong with server');
+            }
+            if (error.status === HttpStatusCode.NotFound) {
+              return throwError('No news found');
+            }
+            if (error.status === HttpStatusCode.Unauthorized) {
+              return throwError('Check permission');
+            }
+            return throwError('Unknowing error');
+          })
+        );
     }
 
     setNewsFeed(newsFeed: NewsFeed){
