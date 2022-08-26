@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     if(this.newsList!=null){
 
       this.newsList = null;
-      this.newsService.getAll('colombia','es',this.page).subscribe(data=>{
+      this.newsService.getAll('colombia','es',this.page+1).subscribe(data=>{
         this.newsList = data;
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     if(this.newsList!=null){
 
       this.newsList = null;
-      this.newsService.getAll('colombia','es',this.page).subscribe(data=>{
+      this.newsService.getAll('colombia','es',this.page-1).subscribe(data=>{
         this.newsList = data;
         for (let i = 0; i < this.newsList.articles.length; i++) {
           this.newsList.articles[i].index=i;

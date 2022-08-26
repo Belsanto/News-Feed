@@ -18,47 +18,21 @@
 }
 .box{
   position: absolute;
-  top: 80%;
+  top: 50%;
   left: 50%;
   z-index: 1;
-  .progress {
-    width: 89.6px;
-    height: calc(89.6px*0.866);
-    clip-path: polygon(50% 0,100% 100%,0 100%);
-    color: #7b43a1;
-    background: linear-gradient(currentColor 0 0),
-         linear-gradient(currentColor 0 0),
-         linear-gradient(currentColor 0 0),
-         linear-gradient(currentColor 0 0),
-         linear-gradient(currentColor 0 0);
-    background-size: 100% calc(100%/5 + 1px);
-    background-repeat: no-repeat;
-    animation: progress-8pcql3 2s infinite;
+  .spinner {
+    width: 88px;
+    height: 88px;
+    border: 17.6px #474bff double;
+    border-left-style: solid;
+    border-radius: 50%;
+    animation: spinner-aib1d7 0.6000000000000001s infinite linear;
  }
 
- @keyframes progress-8pcql3 {
-    0% {
-       background-position: 0 -50%,0 -50%,0 -50%,0 -50%,0 -50%;
-    }
-
-    20% {
-       background-position: 0 100%,0 -50%,0 -50%,0 -50%,0 -50%;
-    }
-
-    40% {
-       background-position: 0 100%,0 75% ,0 -50%,0 -50%,0 -50%;
-    }
-
-    60% {
-       background-position: 0 100%,0 75% ,0 50% ,0 -50%,0 -50%;
-    }
-
-    80% {
-       background-position: 0 100%,0 75% ,0 50% ,0 25% ,0 -50%;
-    }
-
-    100% {
-       background-position: 0 100%,0 75% ,0 50% ,0 25% ,0 0%;
+ @keyframes spinner-aib1d7 {
+    to {
+       transform: rotate(360deg);
     }
  }
 
@@ -66,9 +40,6 @@
 
 @media screen and (max-width: 40em){
   .box{
-
     position: fixed;
-    top: 50%;
-    left: 40%;
   }
 }
