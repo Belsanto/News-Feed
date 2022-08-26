@@ -8,9 +8,14 @@
   </a>
 </section>
   <section *ngIf="newsFeed" class="news-content" >
-    <h1>{{ articleChosen.title }}</h1>
-    <h1>{{ articleChosen.summary | shortDescription}}</h1>
-    <p>{{ articleChosen.published_date | date }}</p>
+    <h1 class="title">{{ articleChosen.title }}</h1>
+    <h1 class="summary">{{ articleChosen.summary | shortDescription}}</h1>
+
+    <h2>{{articleChosen.authors}}</h2>
+    <h2>{{articleChosen.topic}}</h2>
+    <h2>{{articleChosen.country}}</h2>
+    <h3>{{articleChosen.language}}</h3>
+    <h3 class="date">{{ articleChosen.published_date | date }}</h3>
     <a routerLink="/news" [queryParams]="{
       q: newsFeed.user_input.q,
       lang: newsFeed.user_input.lang,
