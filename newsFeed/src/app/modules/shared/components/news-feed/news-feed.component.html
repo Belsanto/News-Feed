@@ -10,17 +10,16 @@
   <section *ngIf="newsFeed" class="news-content" >
     <h1 class="title">{{ articleChosen.title }}</h1>
     <h1 class="summary">{{ articleChosen.summary | shortDescription}}</h1>
-
-    <h2>{{articleChosen.authors}}</h2>
-    <h2>{{articleChosen.topic}}</h2>
-    <h2>{{articleChosen.country}}</h2>
-    <h3>{{articleChosen.language}}</h3>
-    <h3 class="date">{{ articleChosen.published_date | date }}</h3>
-    <a routerLink="/news" [queryParams]="{
+    <h2 class="author">{{articleChosen.authors}}</h2>
+    <h2 class="topic"> <sub> Topic: </sub> {{articleChosen.topic}}</h2>
+    <h2 class="country">{{articleChosen.country}}</h2>
+    <h3 class="lan"> <sub> Country: </sub> {{articleChosen.language}}</h3>
+    <h3 class="date"><a>{{ articleChosen.published_date | date }}</a></h3>
+    <div class="swipe-btn"><a class="btn" routerLink="/news" [queryParams]="{
       q: newsFeed.user_input.q,
       lang: newsFeed.user_input.lang,
       page: newsFeed.page,
-      i: articleChosen.index}">Ver detalle</a>
+      i: articleChosen.index}">Swipe to Details <span></span> </a></div>
   </section>
   <svg class="polygon">
   </svg>
