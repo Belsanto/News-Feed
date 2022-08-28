@@ -10,10 +10,10 @@
   <section *ngIf="newsFeed" class="news-content" >
     <h1 class="title">{{ articleChosen.title }}</h1>
     <h1 class="summary">{{ articleChosen.summary | shortDescription}}</h1>
-    <h2 class="author">{{articleChosen.authors}}</h2>
+    <h2 class="author">{{articleChosen.authors | shortAuthor }}</h2>
     <h2 class="topic"> <sub> Topic: </sub> {{articleChosen.topic}}</h2>
+    <h2 class="lan"> <sub> Language: </sub> {{articleChosen.language}}</h2>
     <h2 class="country">{{articleChosen.country}}</h2>
-    <h3 class="lan"> <sub> Country: </sub> {{articleChosen.language}}</h3>
     <h3 class="date"><a>{{ articleChosen.published_date | date }}</a></h3>
     <div class="swipe-btn"><a class="btn" routerLink="/news" [queryParams]="{
       q: newsFeed.user_input.q,

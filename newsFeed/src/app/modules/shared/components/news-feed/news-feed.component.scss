@@ -51,6 +51,7 @@
         top: 5%;
         background-color: transparent;
         z-index: 2;
+
         .title{
           font-size: 1.6rem;
           font-weight: bold;
@@ -83,10 +84,11 @@
         .country{
           position: absolute;
           left: 100%;
-          bottom: 1.6%;
+          bottom: 3.8%;
           background-color:  #7b43a1;
           padding: 10px 5px;
           width: max-content;
+          font-weight: bolder;
         }
         .lan{
           padding: 3px;
@@ -99,11 +101,10 @@
         }
         .date{
           position: absolute;
-          left: 40%;
-          bottom: 30%;
+          left: 100%;
+          top: 5%;
           font-size: .9rem;
           a{
-            color: whitesmoke;
             text-shadow: 0px 0px 4px  #7b43a1;
           }
 
@@ -166,7 +167,7 @@
           }
           .btn:hover:after{
             transform: translateX(170px) skewX(30deg);
-}
+          }
         }
 
       }
@@ -177,7 +178,7 @@
         z-index: 0;
         .img{
           width: 43.75em;
-          height: 25em;
+          height: 24em;
         }
       }
   }
@@ -204,6 +205,7 @@
     bottom: 0;
     right: 0;
     transform: translateX(-120%);
+    transition: all ease-out .5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,14 +225,47 @@
       .polygon{
         max-width: 21.25em;
         min-width: 11.25em;
-        height: 20.2em;
+        height: 21em;
         left: 3%;
-      -webkit-clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
-      clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
+        clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
+        -webkit-clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
       }
       .news-content{
         width: 55%;
         top: 25%;
+        .title{
+          font-size: 1.1rem;
+        }
+        .summary{
+          font-size: .85rem;
+        }
+        .topic{
+          font-size: .85rem;
+        }
+        .lan{
+          font-size: .85rem;
+        }
+        .date{
+          left: 10%;
+          top: -15px;
+        }
+        .country{
+          bottom: 61.2%;
+          left: 130%;
+        }
+        .swipe-btn{
+          left: 70%;
+          bottom: 10%;
+          .btn{
+            width: 130px;
+            height: 50px;
+            padding-left: 50px;
+            span{
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
       }
       .news-picture{
         top: 10%;
@@ -285,14 +320,47 @@
       .polygon{
         max-width: 21.25em;
         min-width: 11.25em;
-        height: 20em;
+        height: 21em;
         left: 3%;
       -webkit-clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
       clip-path: polygon(0% 20%,60% 20%,60% 0%,100% 50%,60% 100%,60% 80%,0% 80%);
       }
       .news-content{
-        width: 55%;
+        width: 50%;
         top: 25%;
+        .title{
+          font-size: 1rem;
+        }
+        .summary{
+          font-size: .85rem;
+        }
+        .topic{
+          font-size: .85rem;
+        }
+        .lan{
+          font-size: .85rem;
+        }
+        .date{
+          left: 10%;
+          top: -15px;
+        }
+        .country{
+          bottom: 58.2%;
+          left: 110%;
+        }
+        .swipe-btn{
+          left: 95%;
+          bottom: 25%;
+          .btn{
+            width: 130px;
+            height: 50px;
+            padding-left: 50px;
+            span{
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
       }
       .news-picture{
         top: 10%;
@@ -323,6 +391,36 @@
     min-width: 550px;
       .news-content{
         max-width: 40%;
+        .title{
+          font-size: 1.2rem;
+        }
+        .summary{
+          font-size: .85rem;
+        }
+        .topic{
+          font-size: .85rem;
+        }
+        .lan{
+          font-size: .85rem;
+        }
+        .date{
+          left: 110%;
+        }
+        .country{
+          bottom: 10.2%;
+          left: 110%;
+        }
+        .swipe-btn{
+          .btn{
+            width: 130px;
+            height: 50px;
+            padding-left: 50px;
+            span{
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
       }
       .polygon{
         min-width: 23.25em;
@@ -334,6 +432,7 @@
           height: 21.127em;
         }
       }
+
     }
   }
 }
@@ -348,7 +447,17 @@
   .news-detail {
     .box{
       .news-content{
-        max-width: 400px;
+        max-width: 340px;
+
+        .title{
+          font-size: 1.5rem;
+        }
+        .summary{
+          font-size: .95rem;
+        }
+        .date{
+          left: 110%;
+        }
       }
 
       .news-picture{
