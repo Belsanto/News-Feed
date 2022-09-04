@@ -1,3 +1,41 @@
+.pagination{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  ul{
+    display: flex;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50px;
+    li{
+      list-style: none;
+      line-height: 45px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      &.active, &.numb:hover, &.btn:hover{
+        background: #7b43a1;
+      }
+    }
+    .numb{
+      border-radius: 50%;
+      height: 45px;
+      width: 45px;
+    }
+    .btn{
+      padding: 0 20px;
+    }
+    .prev{
+      border-radius: 25px 5px 5px 25px;
+    }
+    .next{
+      border-radius: 5px 25px 25px 5px;
+    }
+  }
+}
+
 .news--grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -83,8 +121,8 @@
         }
         .country{
           position: absolute;
-          left: 100%;
-          bottom: 3.8%;
+          left: 102%;
+          bottom: 4%;
           background-color:  #7b43a1;
           padding: 10px 5px;
           width: max-content;
@@ -144,8 +182,7 @@
               background: whitesmoke;
               border-radius: 50%;
               transition: 0.5s ease-in-out;
-}
-
+            }
           }
           .btn:hover {
             padding-left: 0px;
@@ -381,7 +418,7 @@
 @media screen and (min-width: 40.1em) and (max-width: 50em){
   .news--grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
   }
 
@@ -441,7 +478,7 @@
 @media screen and (min-width: 50.1em) and (max-width: 68.9em){
   .news--grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
   }
   .news-detail {
@@ -469,6 +506,11 @@
 
 // web-mid
 @media screen and (min-width: 69em) and (max-width: 92em){
+  .news--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
   .news-detail {
     .box{
       .polygon{
@@ -486,11 +528,6 @@
 
 // web-large
 @media screen and (min-width: 92.1em){
-  .news--grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 15px;
-  }
 
   .news-detail {
     .box{

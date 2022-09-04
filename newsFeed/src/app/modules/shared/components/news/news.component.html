@@ -1,14 +1,15 @@
-<section class="box">
-
-<a class="news" (click)="onShowDetail()">
-  <app-img
-    [img]="article.media">
-  </app-img>
-
-<section class="content">
-<h2 class="title">{{ article.title }}</h2>
-<p >{{ article.published_date | timeAgo }}</p>
-<h3 class="category">{{ article.topic }}</h3>
-</section>
-</a>
+<section class="card-content">
+  <div class="box">
+    <a class="news" (click)="onShowDetail()">
+      <section class="box-image">
+        <figure class="img"><app-img [img]="article.media"></app-img>
+        </figure>
+      </section>
+      <section class="content">
+        <h2 class="title">{{ article.title }}</h2>
+        <p >{{ article.published_date | timeAgo }}</p>
+        <h3 class="category">{{ article.topic }}</h3>
+      </section>
+    </a>
+  </div>
 </section>

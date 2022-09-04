@@ -19,7 +19,7 @@
       q: newsFeed.user_input.q,
       lang: newsFeed.user_input.lang,
       page: newsFeed.page,
-      i: articleChosen.index}">Swipe to Details <span></span> </a></div>
+      i: articleChosen.index}">Touch to Details <span></span> </a></div>
   </section>
   <svg class="polygon">
   </svg>
@@ -30,11 +30,24 @@
 </div>
 </div>
 
-<div *ngIf="newsFeed!==null" class="news--grid">
+<section *ngIf="newsFeed!==null">
+  <div class="news--grid">
   <app-news (click)="toggleNewsDetail()" [article]="article"
   *ngFor="let article of newsFeed.articles"
-  (showArticle)="onShowDetail($event)"></app-news>
-
- <button  *ngIf="page!==1" (click)="onLoadPrevious()">Load Less</button>
- <button *ngIf="newsFeed.total_pages!==page" (click)="onLoadNext()">Load More</button>
+  (showArticle)="onShowDetail($event)">
+</app-news>
 </div>
+
+<div class="pagination">
+  <ul>
+    <li *ngIf="page!==1" (click)="onLoadPrevious()" class="btn prev"><span><i></i> Prev</span></li>
+    <li [class.active]="openDeatilNews" class="numb"><span>1</span></li>
+    <li class="numb"><span>2</span></li>
+    <li class="numb"><span>3</span></li>
+    <li class="numb"><span>4</span></li>
+    <li class="numb"><span>5</span></li>
+    <li *ngIf="newsFeed.total_pages!==page" (click)="onLoadNext()" class="btn next"><span>Next<i></i></span></li>
+  </ul>
+
+</div>
+</section>
